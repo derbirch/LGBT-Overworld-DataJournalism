@@ -14,9 +14,11 @@ data <- data.frame(CONTINENT = tb[2],
                       year2019 = tb[5])
 
 #### map
+em_bank()
 
-
-data %>% 
-  #group_by(year) %>% 
-  e_charts(name) %>% 
+tb %>% 
+  group_by(YEAR) %>% 
+  e_charts(COUNTRY,timeline = TRUE) %>% 
+  e_geo() %>%
+  e_map(STATUS) %>%
   e_title("2017-2019 LGBT LegalizationGeneral") %>%
